@@ -6,5 +6,5 @@ init:
 	poetry install
 # download news articles and save them in JSON file
 download:
-	@echo "Downloading data from Alpaca..."
+	@echo "Downloading data from https://eodhd.com/financial-apis/stock-market-financial-news-api/..."
 	poetry run python download_news.py
