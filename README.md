@@ -1,13 +1,11 @@
 # Financial Assistant
-This chatbot will help you in consultations about Investments and Stock markets
+This chatbot is designed to assist you with consultations regarding investments and stock markets.
 
-## Data
-Financial news data [here](https://eodhd.com/financial-apis/stock-market-financial-news-api/)
+## Data Source
+Stay informed with the latest financial news. Access real-time financial news data [here](https://eodhd.com/financial-apis/stock-market-financial-news-api/).
 
-
-## TechStack
-- Qdrant - *Vector Database*
-- Openai - *Model from openai*
-- CometML - *Experiment tracking*
-- Bytwax - *Streaming Proccess*
-- Beam - *Model Deployment*
+## Tech Stack
+- **Qdrant**: A robust Vector Database for efficient data retrieval.
+- **CometML**: Experience seamless experiment tracking to monitor and analyze your financial queries.
+- **Bytwax**: Utilize the power of streaming processes for dynamic and real-time updates.
+- **Beam**: Our reliable model deployment solution ensures accurate and timely responses.
