@@ -1,4 +1,4 @@
-# import fire
+import fire
 from pathlib import Path
 
 
@@ -21,8 +21,10 @@ def train_sft(
 
     import logging
     from training_pipeline import initialize
+    from training_pipeline import utils
+    # from training_pipeline.api import TrainingPipelineAPI
 
-    initialize(logging_config_path=logging_config_path, env_file_path=env_file_path)
+    # initialize(logging_config_path=logging_config_path, env_file_path=env_file_path)
 
 
 
