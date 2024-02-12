@@ -6,7 +6,6 @@ training:
   learning_rate: 2.e-4
   max_steps: 100
   evaluation_strategy: steps
-  eval_accumulation_steps: 1
   eval_steps: 10
   save_steps: 10
   logging_steps: 5
