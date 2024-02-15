@@ -86,7 +86,7 @@ register_template(
     PromptTemplate(
         name="mistralai",
         instruction_template="[SYS]{instruction}[/SYS]",
-        chat_history_template="summary: chat_history}",
+        chat_history_template="{chat_history}",
         question_template="<s>[INST]{input}[/INST]",
         answer_template="{output}",
         stop_str="</s>"
