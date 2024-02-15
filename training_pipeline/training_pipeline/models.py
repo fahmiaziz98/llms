@@ -86,9 +86,9 @@ def qlora_model(
 
     else:
         lora_config = LoraConfig(
-            lora_alpha=64,
+            lora_alpha=16,
             lora_dropout=0.1,
-            r=32,
+            r=8,
             bias="none",
             task_type="CAUSAL_LM",
             target_modules=[
