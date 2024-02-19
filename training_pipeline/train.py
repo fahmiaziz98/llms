@@ -1,6 +1,8 @@
 import fire
 from pathlib import Path
 
+from training_pipeline.training_pipeline import configs
+
 
 
 def train_sft(

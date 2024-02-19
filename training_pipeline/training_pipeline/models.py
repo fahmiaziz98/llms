@@ -17,7 +17,7 @@ from transformers import (
     BitsAndBytesConfig,
 )
 
-from training_pipeline import constants
+from training_pipeline.training_pipeline import constants
 
 logger = logging.getLogger(__name__)
 
@@ -140,7 +140,7 @@ def download_from_registry(model_id: str, cache_dir:Optional[Path]=None):
         model = api.get_model(workspace=workspace, model_name=model_name)
         model.download(version=version, output_folder=output_folder, expand=True)
     else:
-        logger.info(f"Model {model_id=} already downloaded to: {output_folder}")
+        logger.info(f"Model {model_id} already downloaded to: {output_folder}")
 
     subdirs = [d for d in output_folder.iterdir() if d.is_dir()]
     if len(subdirs) == 1:
@@ -151,7 +151,7 @@ def download_from_registry(model_id: str, cache_dir:Optional[Path]=None):
                 Check the downloaded model at: {output_folder}"
         )
 
-    logger.info(f"Model {model_id=} downloaded from the registry to: {model_dir}")
+    logger.info(f"Model {model_id} downloaded from the registry to: {model_dir}")
 
     return model_dir
 
@@ -186,8 +186,17 @@ def prompt(
         device
     )
 
+    # see here
+    # https://huggingface.co/transformers/v4.0.1/main_classes/model.html?highlight=generate#generation
     outputs = model.generate(
-        **inputs, max_new_tokens=max_new_tokens, temperature=temperature
+        **inputs, 
+        max_new_tokens=max_new_tokens, 
+        temperature=temperature,
+        do_sample=False,
+        top_k=50,
+        top_p=0.95,
+        repetition_penalty=1.0,
+        pad_token_id=tokenizer.eos_token_id,
     )
 
     output = outputs[
