@@ -16,8 +16,7 @@ class DataSample:
     A data sample for a question answering model.
 
     Attributes:
-        user_context (str): The user's context for the question.
-        news_context (str): The news context for the question.
+        instruction (str): The instruction for question
         chat_history (str): The chat history for the question.
         question (str): The question to be answered.
         answer (str): The answer to the question.

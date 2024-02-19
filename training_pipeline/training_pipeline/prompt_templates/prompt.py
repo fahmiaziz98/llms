@@ -55,8 +55,8 @@ class PromptTemplate:
         prompt = self.train_raw_template.format(
             instruction_template=sample["instruction"],
             chat_history=sample.get("chat_history", ""),
-            question=sample["question"],
-            answer=sample["answer"],
+            question=sample["input"],
+            answer=sample["output"],
         )
         return {"prompt": prompt, "payload": sample}
 
@@ -66,7 +66,7 @@ class PromptTemplate:
         prompt = self.infer_raw_template.format(
             instruction_template=sample["instruction"],
             chat_history=sample.get("chat_history", ""),
-            question=sample["question"],
+            question=sample["input"],
         )
         return {"prompt": prompt, "payload": sample}
 
@@ -84,8 +84,8 @@ def get_template(name: str) -> PromptTemplate:
 #### Register Templates ####
 register_template(
     PromptTemplate(
-        name="mistralai",
-        instruction_template="[SYS]{instruction}[/SYS]",
+        name="mistral",
+        instruction_template="<<SYS>>{instruction}<</SYS>>",
         chat_history_template="{chat_history}",
         question_template="<s>[INST]{input}[/INST]",
         answer_template="{output}",

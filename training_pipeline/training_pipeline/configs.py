@@ -85,3 +85,36 @@ class TrainingConfig:
             seed=training_config["seed"],
             load_best_model_at_end=training_config["load_best_model_at_end"],
         )
+
+
+@dataclass
+class InferenceConfig:
+    """
+    A class representing the configuration for inference.
+
+    Attributes:
+    -----------
+    model : Dict[str, Any]
+        A dictionary containing the model configuration.
+    peft_model : Dict[str, Any]
+        A dictionary containing the PEFT model configuration.
+    setup : Dict[str, Any]
+        A dictionary containing the setup configuration.
+    dataset : Dict[str, str]
+        A dictionary containing the dataset configuration.
+    """
+
+    model: Dict[str, Any]
+    peft_model: Dict[str, Any]
+    setup: Dict[str, Any]
+    dataset: Dict[str, str]
+
+    @classmethod
+    def from_yaml(cls, config_path: Path):
+        """
+        Load a configuration file from the given path.
+        """
+
+        config = load_yaml(config_path)
+
+        return cls(**config)

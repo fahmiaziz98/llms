@@ -1,3 +1,8 @@
+"""
+Preferensi:
+    https://gathnex.medium.com/mistral-7b-fine-tuning-a-step-by-step-guide-52122cdbeca8
+"""
+
 import logging
 import os
 from pathlib import Path
@@ -60,6 +65,7 @@ def qlora_model(
 
     if tokenizer.pad_token is None:
         tokenizer.add_special_tokens({"pad_token": "</s>"})
+        tokenizer.add_eos_token = True
         with torch.no_grad():
             model.resize_token_embeddings(len(tokenizer))
         model.config.pad_token = tokenizer.pad_token

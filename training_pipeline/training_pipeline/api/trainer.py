@@ -120,7 +120,7 @@ class TrainerAPI:
         self._model_cache_dir = model_cache_dir
 
         self._training_dataset, self._validation_dataset = self.load_data()
-        self._model, self._tokenizer, self._lora_config = self.load_model()
+        self._model, self._tokenizer, self._peft_config = self.load_model()
 
 
     @classmethod
