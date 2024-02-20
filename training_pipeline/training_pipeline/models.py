@@ -181,7 +181,7 @@ def prompt(
     Returns:
         str: The generated text.
     """
-
+    tokenizer.padding_side = "left"
     inputs = tokenizer(input_text, return_tensors="pt", return_token_type_ids=False).to(
         device
     )
