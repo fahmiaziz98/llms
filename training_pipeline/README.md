@@ -2,6 +2,14 @@
 ## Usage for Development
 Before you start, you must have an API Key from [Comet-ML](https://www.comet.com/docs/v2/api-and-sdk/python-sdk/getting-started/) and install the [Beam SDK](https://docs.beam.cloud/getting-started/installation). Additionally, you need to set up the API key by configuring it in the appropriate environment variable.
 
+Before you begin using the training pipeline, please ensure you have access to the Beam cloud platform. Once logged in to your Beam account, proceed to create a volume:
+
+1. Go to the Volumes section.
+2. Click "New Volume" in the top right corner.
+3. Choose "qa_dataset" for Volume Name and "Shared" for Volume Type.
+
+----
+
 - Prepare credentials:
 
     ```bash
