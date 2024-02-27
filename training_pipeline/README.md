@@ -1,3 +1,12 @@
+# Training Pipeline
+Training pipeline that:
+
+- loads a proprietary Q&A dataset
+- fine-tunes an open-source LLM using QLoRA
+- logs the training experiments on Comet ML's experiment tracker & the inference results on Comet ML's LLMOps dashboard
+- stores the best model on Comet ML's model registry
+
+The training pipeline is deployed using [Beam](https://docs.beam.cloud/getting-started/installation) as a serverless GPU infrastructure.
 
 ## Usage for Development
 Before you start, you must have an API Key from [Comet-ML](https://www.comet.com/docs/v2/api-and-sdk/python-sdk/getting-started/) and install the [Beam SDK](https://docs.beam.cloud/getting-started/installation). Additionally, you need to set up the API key by configuring it in the appropriate environment variable.
