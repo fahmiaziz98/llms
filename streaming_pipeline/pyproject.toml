@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "streaming_pipeline"
+version = "0.1.0"
+description = ""
+authors = ["fahmiaziz98 <fahmiazizfadhil09@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+bytewax = "^0.16.2"
+python-dotenv = "^1.0.0"
+websocket-client = "^1.6.2"
+pydantic = ">=1.8,<2.0"
+unstructured = "^0.10.5"
+sentencepiece = "^0.1.99"
+qdrant-client = "1.1.1"
+fire = "^0.5.0"
+transformers = "^4.33.1"
+torch = "2.0.1"
+pyyaml = "6.0.1"
+
+[tool.poetry.dev-dependencies]
+black = "^24.2.0"
+ruff = "^0.2.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.isort]
+case-sensitive = true
