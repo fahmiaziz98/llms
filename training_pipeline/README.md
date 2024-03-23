@@ -25,6 +25,13 @@ Before you begin using the training pipeline, please ensure you have access to t
     cp .env.example .env
     ```
 
+- Replace your api, workspace, project name
+    ```bash
+    COMET_API_KEY = "comet-api-key"
+    COMET_WORKSPACE = "your-workspace"
+    COMET_PROJECT_NAME = "your-project-name"
+    ```
+
 - This command will build the dataset and push it to the Beam cloud. Run this command to prepare the dataset before training the model:
 
     ```bash

@@ -7,6 +7,9 @@ from unstructured.cleaners.core import clean, clean_non_ascii_chars, replace_uni
 from unstructured.staging.huggingface import chunk_by_attention_window
 from unstructured.partition.html import partition_html
 
+from streaming_pipeline.embeddings import EmbeddingModelSingleton
+
+
 
 class Document(BaseModel):
     """
@@ -95,7 +98,21 @@ class Document(BaseModel):
 
 
 class NewsArticle(BaseModel):
-    """Represents a news article."""
+    """
+    Represents a news article.
+
+    Attributes:
+        id (int): News article ID
+        headline (str): Headline or title of the article
+        summary (str): Summary text for the article (may be first sentence of content)
+        author (str): Original author of news article
+        created_at (datetime): Date article was created 
+        updated_at (datetime): Date article was updated 
+        url (Optional[str]): URL of article (if applicable)
+        content (str): Content of the news article (might contain HTML)
+        symbols (List[str]): List of related or mentioned symbols
+        source (str): Source where the news originated from (e.g. Benzinga)
+    """
 
     id: int
     headline: str
