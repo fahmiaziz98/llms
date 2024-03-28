@@ -6,7 +6,7 @@ from typing import Optional, List
 import requests
 from bytewax.inputs import DynamicInput, StatelessSource
 
-from streaming_pipeline.streaming_pipeline import utils
+from streaming_pipeline import utils
 
 logger = logging.getLogger(__name__)
 

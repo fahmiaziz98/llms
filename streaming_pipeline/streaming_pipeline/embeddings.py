@@ -6,8 +6,8 @@ from typing import Optional, Union
 import numpy as np
 from transformers import AutoModel, AutoTokenizer
 
-from streaming_pipeline.streaming_pipeline import constants
-from streaming_pipeline.streaming_pipeline.base import SingletonMeta
+from streaming_pipeline import constants
+from streaming_pipeline.base import SingletonMeta
 
 logger = logging.getLogger(__name__)
 
@@ -29,11 +29,11 @@ class EmbeddingModelSingleton(metaclass=SingletonMeta):
     """
 
     def __init__(
-            self,
-            model_id: str = constants.EMBEDDING_MODEL_ID,
-            max_input_length: int = constants.EMBEDDING_MODEL_MAX_INPUT_LENGTH,
-            device: str = constants.EMBEDDING_MODEL_DEVICE,
-            cache_dir: Optional[Path] = None
+        self,
+        model_id: str = constants.EMBEDDING_MODEL_ID,
+        max_input_length: int = constants.EMBEDDING_MODEL_MAX_INPUT_LENGTH,
+        device: str = constants.EMBEDDING_MODEL_DEVICE,
+        cache_dir: Optional[Path] = None
     ):
         self._model_id = model_id
         self._max_input_length = max_input_length
