@@ -17,7 +17,7 @@ from transformers import (
     BitsAndBytesConfig,
 )
 
-from training_pipeline.training_pipeline import constants
+from training_pipeline import constants
 
 logger = logging.getLogger(__name__)
 

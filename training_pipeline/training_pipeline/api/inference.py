@@ -10,8 +10,8 @@ from peft import PeftConfig
 from tqdm import tqdm
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-from training_pipeline.training_pipeline import models, constants
-from training_pipeline.training_pipeline.configs import InferenceConfig
+from training_pipeline import models, constants
+from training_pipeline.configs import InferenceConfig
 from training_pipeline.data import qa, utils
 from training_pipeline.prompt_templates.prompt import get_template
 

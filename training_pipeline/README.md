@@ -1,4 +1,8 @@
 # Training Pipeline
+
+<img src="training_pipeline.jpg" width="1000" height="500">
+
+---
 Training pipeline that:
 
 - loads a proprietary Q&A dataset

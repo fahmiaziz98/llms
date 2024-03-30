@@ -1,7 +1,7 @@
 import fire
 from pathlib import Path
 
-from training_pipeline.training_pipeline import configs
+from training_pipeline import configs
 
 
 
@@ -25,9 +25,9 @@ def train(
     """
 
     import logging
-    from training_pipeline.training_pipeline import initialize
-    from training_pipeline.training_pipeline import utils
-    from training_pipeline.training_pipeline.api import TrainerAPI
+    from training_pipeline import initialize
+    from training_pipeline import utils
+    from training_pipeline.api import TrainerAPI
 
     initialize(logging_config_path=logging_config_path, env_file_path=env_file_path)
 

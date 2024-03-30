@@ -1,7 +1,7 @@
 from pathlib import Path
 import fire
 
-from training_pipeline.training_pipeline import configs
+from training_pipeline import configs
 
 
 def inference(
@@ -13,9 +13,9 @@ def inference(
         model_chache_dir: str = None
 ):
     import logging
-    from training_pipeline.training_pipeline import initialize
-    from training_pipeline.training_pipeline import utils
-    from training_pipeline.training_pipeline.api import InferenceAPI
+    from training_pipeline import initialize
+    from training_pipeline import utils
+    from training_pipeline.api import InferenceAPI
 
     logger = logging.getLogger(__name__)
 
